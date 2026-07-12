@@ -20,7 +20,7 @@ A beautiful and elegant single-page website displaying the 99 Names of Allah (As
 
 ## 🚀 Live Demo
 
-👉 https://YOUR_USERNAME.github.io/asma-ul-husna/
+👉 https://mfhaque0.github.io/asma-ul-husna/
 
 ## 📷 Preview
 
