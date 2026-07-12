@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asma Ul Husna - All 99 Names</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@300;400;500&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F4F7F6;          
+            --card-bg: rgba(255, 255, 255, 0.85); 
+            --primary-dark: #1A4331;      
+            --text-gray: #5A6B64;         
+            --accent-gold: #C8A97E;       
+            --accent-sage: #E3EDE8;       
+            --shadow-soft: 0 15px 35px rgba(26, 67, 49, 0.05);
+            --shadow-hover: 0 25px 50px rgba(26, 67, 49, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary-dark);
+            padding-bottom: 60px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            top: -10%;
+            width: 50vw;
+            height: 600px;
+            z-index: -1;
+            pointer-events: none;
+            filter: blur(80px);
+            opacity: 0.6;
+        }
+
+        body::before {
+            left: 0;
+            background: radial-gradient(circle, rgba(200, 169, 126, 0.2) 0%, transparent 70%);
+        }
+
+        body::after {
+            right: 0;
+            background: radial-gradient(circle, rgba(26, 67, 49, 0.15) 0%, transparent 70%);
+        }
+
+        .hero {
+            padding: 80px 20px 50px;
+            text-align: center;
+        }
+
+        .hero-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 64px;
+            color: var(--primary-dark);
+            margin-bottom: -10px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-gray);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-instruction {
+            margin-top: 30px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 35px 30px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card:hover, .card:focus {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            outline: none;
+            border-color: var(--accent-sage);
+        }
+
+        .card:hover::before, .card.active::before {
+            opacity: 0.8;
+        }
+
+        .badge {
+            background: var(--accent-sage);
+            color: var(--primary-dark);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(26, 67, 49, 0.1);
+        }
+
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 56px;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(26, 67, 49, 0.05);
+        }
+
+        .english {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--primary-dark);
+        }
+
+        .meaning-grid {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card.active .meaning-grid {
+            grid-template-rows: 1fr;
+        }
+
+        .meaning-inner {
+            overflow: hidden;
+        }
+
+        .meaning-text {
+            margin-top: 25px;
+            padding: 15px 20px;
+            background: rgba(227, 237, 232, 0.4); 
+            border-radius: 12px;
+            border-left: 3px solid var(--accent-gold);
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.5s ease;
+        }
+
+        .card.active .meaning-text {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-arabic">أسماء الله الحسنى</div>
+        <h1 class="hero-title">Asma Ul Husna</h1>
+        <p class="hero-subtitle">The 99 Beautiful Names of Allah</p>
+        <div class="hero-instruction">Tap to reveal</div>
+    </header>
+    
+    <main class="container" id="names-container"></main>
+
+    <script>
+        const asmaUlHusna = [
+            { arabic: "الرَّحْمَٰنُ", english: "Ar-Rahman", meaning: "The Most Compassionate, The Beneficent." },
+            { arabic: "الرَّحِيمُ", english: "Ar-Raheem", meaning: "The Most Merciful." },
+            { arabic: "الْمَلِكُ", english: "Al-Malik", meaning: "The King, The Sovereign." },
+            { arabic: "الْقُدُّوسُ", english: "Al-Quddus", meaning: "The Most Holy, The Pure." },
+            { arabic: "السَّلَامُ", english: "As-Salam", meaning: "The Source of Peace." },
+            { arabic: "الْمُؤْمِنُ", english: "Al-Mu'min", meaning: "The Guarantor, The Inspirer of Faith." },
+            { arabic: "الْمُهَيْمِنُ", english: "Al-Muhaymin", meaning: "The Guardian, The Preserver." },
+            { arabic: "الْعَزِيزُ", english: "Al-Aziz", meaning: "The Almighty, The Invincible." },
+            { arabic: "الْجَبَّارُ", english: "Al-Jabbar", meaning: "The Compeller, The Restorer." },
+            { arabic: "الْمُتَكَبِّرُ", english: "Al-Mutakabbir", meaning: "The Supreme, The Majestic." },
+            { arabic: "الْخَالِقُ", english: "Al-Khaliq", meaning: "The Creator." },
+            { arabic: "الْبَارِئُ", english: "Al-Bari'", meaning: "The Maker, The Evolver." },
+            { arabic: "الْمُصَوِّرُ", english: "Al-Musawwir", meaning: "The Fashioner of Forms." },
+            { arabic: "الْغَفَّارُ", english: "Al-Ghaffar", meaning: "The Ever-Forgiving." },
+            { arabic: "الْقَهَّارُ", english: "Al-Qahhar", meaning: "The All-Compelling Subduer." },
+            { arabic: "الْوَهَّابُ", english: "Al-Wahhab", meaning: "The Bestower." },
+            { arabic: "الرَّزَّاقُ", english: "Ar-Razzaq", meaning: "The Ever-Providing." },
+            { arabic: "الْفَتَّاحُ", english: "Al-Fattah", meaning: "The Opener, The Victory Giver." },
+            { arabic: "الْعَلِيمُ", english: "Al-Alim", meaning: "The All-Knowing, The Omniscient." },
+            { arabic: "الْقَابِضُ", english: "Al-Qabid", meaning: "The Restrainer, The Straightener." },
+            { arabic: "الْبَاسِطُ", english: "Al-Basit", meaning: "The Expander, The Munificent." },
+            { arabic: "الْخَافِضُ", english: "Al-Khafid", meaning: "The Abaser." },
+            { arabic: "الرَّافِعُ", english: "Ar-Rafi'", meaning: "The Exalter." },
+            { arabic: "الْمُعِزُّ", english: "Al-Mu'izz", meaning: "The Giver of Honor." },
+            { arabic: "الْمُذِلُّ", english: "Al-Mudhill", meaning: "The Giver of Dishonor." },
+            { arabic: "السَّمِيعُ", english: "As-Sami'", meaning: "The All-Hearing." },
+            { arabic: "الْبَصِيرُ", english: "Al-Basir", meaning: "The All-Seeing." },
+            { arabic: "الْحَكَمُ", english: "Al-Hakam", meaning: "The Judge, The Arbitrator." },
+            { arabic: "الْعَدْلُ", english: "Al-Adl", meaning: "The Utterly Just." },
+            { arabic: "اللَّطِيفُ", english: "Al-Latif", meaning: "The Subtle One, The Most Gentle." },
+            { arabic: "الْخَبِيرُ", english: "Al-Khabir", meaning: "The All-Aware." },
+            { arabic: "الْحَلِيمُ", english: "Al-Halim", meaning: "The Forbearing, The Indulgent." },
+            { arabic: "الْعَظِيمُ", english: "Al-Azim", meaning: "The Magnificent, The Infinite." },
+            { arabic: "الْغَفُورُ", english: "Al-Ghafur", meaning: "The All-Forgiving." },
+            { arabic: "الشَّكُورُ", english: "Ash-Shakur", meaning: "The Most Appreciative." },
+            { arabic: "الْعَلِيُّ", english: "Al-Ali", meaning: "The Most High, The Exalted." },
+            { arabic: "الْكَبِيرُ", english: "Al-Kabir", meaning: "The Most Great." },
+            { arabic: "الْحَفِيظُ", english: "Al-Hafiz", meaning: "The Preserver." },
+            { arabic: "الْمُقِيتُ", english: "Al-Muqit", meaning: "The Nourisher." },
+            { arabic: "الْحَسِيبُ", english: "Al-Hasib", meaning: "The Reckoner." },
+            { arabic: "الْجَلِيلُ", english: "Al-Jalil", meaning: "The Majestic." },
+            { arabic: "الْكَرِيمُ", english: "Al-Karim", meaning: "The Most Generous." },
+            { arabic: "الرَّقِيبُ", english: "Ar-Raqib", meaning: "The Watchful." },
+            { arabic: "الْمُجِيبُ", english: "Al-Mujib", meaning: "The Responsive, The Answerer." },
+            { arabic: "الْوَاسِعُ", english: "Al-Wasi'", meaning: "The All-Encompassing." },
+            { arabic: "الْحَكِيمُ", english: "Al-Hakim", meaning: "The All-Wise." },
+            { arabic: "الْوَدُودُ", english: "Al-Wadud", meaning: "The Most Loving." },
+            { arabic: "الْمَجِيدُ", english: "Al-Majid", meaning: "The All-Glorious." },
+            { arabic: "الْبَاعِثُ", english: "Al-Ba'ith", meaning: "The Resurrecter." },
+            { arabic: "الشَّهِيدُ", english: "Ash-Shahid", meaning: "The Witness." },
+            { arabic: "الْحَقُّ", english: "Al-Haqq", meaning: "The Truth." },
+            { arabic: "الْوَكِيلُ", english: "Al-Wakil", meaning: "The Trustee, The Dependable." },
+            { arabic: "الْقَوِيُّ", english: "Al-Qawi", meaning: "The Most Strong." },
+            { arabic: "الْمَتِينُ", english: "Al-Matin", meaning: "The Firm, The Steadfast." },
+            { arabic: "الْوَلِيُّ", english: "Al-Wali", meaning: "The Protecting Friend, The Patron." },
+            { arabic: "الْحَمِيدُ", english: "Al-Hamid", meaning: "The All-Praiseworthy." },
+            { arabic: "الْمُحْصِي", english: "Al-Muhsi", meaning: "The Accounter, The Numberer of All." },
+            { arabic: "الْمُبْدِئُ", english: "Al-Mubdi'", meaning: "The Originator, The Producer." },
+            { arabic: "الْمُعِيدُ", english: "Al-Mu'id", meaning: "The Restorer, The Reinstater." },
+            { arabic: "الْمُحْيِي", english: "Al-Muhyi", meaning: "The Giver of Life." },
+            { arabic: "الْمُمِيتُ", english: "Al-Mumit", meaning: "The Bringer of Death, The Destroyer." },
+            { arabic: "الْحَيُّ", english: "Al-Hayy", meaning: "The Ever-Living." },
+            { arabic: "الْقَيُّومُ", english: "Al-Qayyum", meaning: "The Self-Subsisting Sustainer of All." },
+            { arabic: "الْوَاجِدُ", english: "Al-Wajid", meaning: "The Finder, The Perceiver." },
+            { arabic: "الْمَاجِدُ", english: "Al-Majid", meaning: "The Illustrious, The Magnificent." },
+            { arabic: "الْوَاحِدُ", english: "Al-Wahid", meaning: "The One, The Unique." },
+            { arabic: "الْأَحَدُ", english: "Al-Ahad", meaning: "The Indivisible." },
+            { arabic: "الصَّمَدُ", english: "As-Samad", meaning: "The Eternal, The Absolute." },
+            { arabic: "الْقَادِرُ", english: "Al-Qadir", meaning: "The All-Powerful." },
+            { arabic: "الْمُقْتَدِرُ", english: "Al-Muqtadir", meaning: "The Creator of All Power." },
+            { arabic: "الْمُقَدِّمُ", english: "Al-Muqaddim", meaning: "The Expediter." },
+            { arabic: "الْمُؤَخِّرُ", english: "Al-Mu'akhkhir", meaning: "The Delayer." },
+            { arabic: "الْأَوَّلُ", english: "Al-Awwal", meaning: "The First." },
+            { arabic: "الْآخِرُ", english: "Al-Akhir", meaning: "The Last." },
+            { arabic: "الظَّاهِرُ", english: "Az-Zahir", meaning: "The Manifest, The Evident." },
+            { arabic: "الْبَاطِنُ", english: "Al-Batin", meaning: "The Hidden, The Unmanifest." },
+            { arabic: "الْوَالِي", english: "Al-Wali", meaning: "The Patron, The Protecting Friend." },
+            { arabic: "الْمُتَعَالِي", english: "Al-Muta'ali", meaning: "The Supremely Exalted." },
+            { arabic: "الْبَرُّ", english: "Al-Barr", meaning: "The Source of All Goodness." },
+            { arabic: "التَّوَّابُ", english: "At-Tawwab", meaning: "The Acceptor of Repentance." },
+            { arabic: "الْمُنْتَقِمُ", english: "Al-Muntaqim", meaning: "The Avenger." },
+            { arabic: "الْعَفُوُّ", english: "Al-Afuww", meaning: "The Pardoner, The Effacer of Sins." },
+            { arabic: "الرَّءُوفُ", english: "Ar-Ra'uf", meaning: "The Most Kind, The Clement." },
+            { arabic: "مَالِكُ الْمُلْكِ", english: "Malik-ul-Mulk", meaning: "The Owner of All Sovereignty." },
+            { arabic: "ذُو الْجَلَالِ وَالْإِكْرَامِ", english: "Dhul-Jalali wal-Ikram", meaning: "The Lord of Majesty and Bounty." },
+            { arabic: "الْمُقْسِطُ", english: "Al-Muqsit", meaning: "The Equitable, The Requiter." },
+            { arabic: "الْجَامِعُ", english: "Al-Jami'", meaning: "The Gatherer, The Unifier." },
+            { arabic: "الْغَنِيُّ", english: "Al-Ghani", meaning: "The All-Rich, The Independent." },
+            { arabic: "الْمُغْنِي", english: "Al-Mughni", meaning: "The Enricher, The Emancipator." },
+            { arabic: "الْمَانِعُ", english: "Al-Mani'", meaning: "The Preventer, The Withholder." },
+            { arabic: "الضَّارُّ", english: "Ad-Darr", meaning: "The Distresser, The Harmer." },
+            { arabic: "النَّافِعُ", english: "An-Nafi'", meaning: "The Propitious, The Benefactor." },
+            { arabic: "النُّورُ", english: "An-Nur", meaning: "The Light." },
+            { arabic: "الْهَادِي", english: "Al-Hadi", meaning: "The Guide." },
+            { arabic: "الْبَدِيعُ", english: "Al-Badi'", meaning: "The Incomparable, The Originator." },
+            { arabic: "الْبَاقِي", english: "Al-Baqi", meaning: "The Ever-Enduring, The Immutable." },
+            { arabic: "الْوَارِثُ", english: "Al-Warith", meaning: "The Heir, The Inheritor of All." },
+            { arabic: "الرَّشِيدُ", english: "Ar-Rashid", meaning: "The Guide to the Right Path." },
+            { arabic: "الصَّبُورُ", english: "As-Sabur", meaning: "The Patient, The Timeless." }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('names-container');
+
+            asmaUlHusna.forEach((item, index) => {
+                const number = String(index + 1).padStart(2, '0');
+                
+                const card = document.createElement('article');
+                card.className = 'card';
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('aria-expanded', 'false');
+                
+                card.style.animationDelay = `${index * 0.05}s`;
+
+                card.innerHTML = `
+                    <div class="badge">${number}</div>
+                    <div class="arabic">${item.arabic}</div>
+                    <div class="english">${item.english}</div>
+                    
+                    <div class="meaning-grid">
+                        <div class="meaning-inner">
+                            <div class="meaning-text">
+                                ${item.meaning}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            const allCards = document.querySelectorAll('.card');
+
+            allCards.forEach(card => {
+                card.addEventListener('click', () => toggleCard(card, allCards));
+
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleCard(card, allCards);
+                    }
+                });
+            });
+
+            function toggleCard(activeCard, cardsList) {
+                const isActive = activeCard.classList.contains('active');
+
+                cardsList.forEach(c => {
+                    c.classList.remove('active');
+                    c.setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isActive) {
+                    activeCard.classList.add('active');
+                    activeCard.setAttribute('aria-expanded', 'true');
+                    
+                    setTimeout(() => {
+                        activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 300);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
